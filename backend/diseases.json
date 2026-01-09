@@ -1,0 +1,923 @@
+{
+  "ASTHMA": [
+    "exercise intolerance",
+    "chest tightness",
+    "fatigue",
+    "shortness of breath",
+    "wheezing",
+    "nighttime symptoms",
+    "persistent cough"
+  ],
+  "ANEMIA": [
+    "weakness",
+    "fatigue",
+    "palpitations",
+    "shortness of breath",
+    "headache",
+    "pallor",
+    "dizziness"
+  ],
+  "APPENDICITIS": [
+    "right lower quadrant pain",
+    "loss of appetite",
+    "abdominal tenderness",
+    "vomiting",
+    "low-grade fever",
+    "abdominal pain",
+    "nausea"
+  ],
+  "ALZHEIMERS_DISEASE": [
+    "memory loss",
+    "confusion",
+    "language problems",
+    "disorientation",
+    "difficulty performing familiar tasks",
+    "poor judgment",
+    "mood changes"
+  ],
+  "ARTHRITIS": [
+    "joint pain",
+    "swelling",
+    "warmth over joints",
+    "fatigue",
+    "reduced range of motion",
+    "joint stiffness",
+    "morning stiffness"
+  ],
+  "ATHLETES_FOOT": [
+    "itching between toes",
+    "peeling",
+    "burning sensation",
+    "redness",
+    "foot odor",
+    "scaling skin",
+    "cracked skin"
+  ],
+  "ACNE": [
+    "oily skin",
+    "papules",
+    "blackheads",
+    "nodules",
+    "pustules",
+    "skin redness",
+    "whiteheads"
+  ],
+  "BRONCHITIS": [
+    "fatigue",
+    "shortness of breath",
+    "mucus production",
+    "mild fever",
+    "wheezing",
+    "persistent cough",
+    "chest discomfort"
+  ],
+  "BREAST_CANCER": [
+    "thickened breast tissue",
+    "skin dimpling",
+    "breast asymmetry",
+    "nipple discharge",
+    "redness",
+    "breast pain",
+    "breast lump"
+  ],
+  "BIPOLAR_DISORDER": [
+    "mood swings",
+    "irritability",
+    "depression",
+    "impulsivity",
+    "mania",
+    "sleep disturbances",
+    "poor concentration"
+  ],
+  "BLOOD_PRESSURE_HIGH": [
+    "often asymptomatic",
+    "fatigue",
+    "blurred vision",
+    "headache",
+    "nosebleeds",
+    "dizziness",
+    "chest discomfort"
+  ],
+  "BRAIN_TUMOR": [
+    "vomiting",
+    "seizures",
+    "headache",
+    "cognitive impairment",
+    "vision changes",
+    "personality changes",
+    "nausea"
+  ],
+  "BOTULISM": [
+    "slurred speech",
+    "difficulty swallowing",
+    "blurred vision",
+    "dry mouth",
+    "respiratory difficulty",
+    "drooping eyelids",
+    "muscle weakness"
+  ],
+  "BRUCELLOSIS": [
+    "weight loss",
+    "joint pain",
+    "fatigue",
+    "sweating",
+    "muscle pain",
+    "headache",
+    "fever"
+  ],
+  "COVID_19": [
+    "body aches",
+    "fatigue",
+    "shortness of breath",
+    "loss of taste",
+    "dry cough",
+    "loss of smell",
+    "fever"
+  ],
+  "CHICKENPOX": [
+    "loss of appetite",
+    "fatigue",
+    "headache",
+    "itchy rash",
+    "malaise",
+    "fluid-filled blisters",
+    "fever"
+  ],
+  "COPD": [
+    "exercise intolerance",
+    "chronic cough",
+    "chest tightness",
+    "fatigue",
+    "shortness of breath",
+    "sputum production",
+    "wheezing"
+  ],
+  "CORONARY_ARTERY_DISEASE": [
+    "chest pain",
+    "fatigue",
+    "shortness of breath",
+    "sweating",
+    "arm or jaw pain",
+    "nausea"
+  ],
+  "CROHNS_DISEASE": [
+    "weight loss",
+    "anemia",
+    "fatigue",
+    "bloody stool",
+    "chronic diarrhea",
+    "abdominal pain",
+    "fever"
+  ],
+  "CELLULITIS": [
+    "warmth",
+    "swelling",
+    "pain",
+    "skin redness",
+    "tenderness",
+    "skin tightness",
+    "fever"
+  ],
+  "COLORECTAL_CANCER": [
+    "weight loss",
+    "anemia",
+    "change in bowel habits",
+    "constipation or diarrhea",
+    "fatigue",
+    "blood in stool",
+    "abdominal pain"
+  ],
+  "DIABETES_MELLITUS": [
+    "increased hunger",
+    "fatigue",
+    "blurred vision",
+    "frequent urination",
+    "excessive thirst",
+    "unintended weight loss",
+    "slow wound healing"
+  ],
+  "DENGUE_FEVER": [
+    "joint pain",
+    "skin rash",
+    "muscle pain",
+    "high fever",
+    "pain behind eyes",
+    "severe headache",
+    "nausea"
+  ],
+  "DEPRESSION": [
+    "fatigue",
+    "loss of interest",
+    "feelings of worthlessness",
+    "persistent sadness",
+    "appetite changes",
+    "sleep disturbances",
+    "poor concentration"
+  ],
+  "DERMATITIS": [
+    "dry skin",
+    "scaling",
+    "rash",
+    "swelling",
+    "skin redness",
+    "blisters",
+    "itching"
+  ],
+  "DIVERTICULITIS": [
+    "constipation",
+    "vomiting",
+    "left lower abdominal pain",
+    "bloating",
+    "fever",
+    "diarrhea",
+    "nausea"
+  ],
+  "DOWN_SYNDROME": [
+    "vision problems",
+    "hypotonia",
+    "developmental delay",
+    "intellectual disability",
+    "hearing issues",
+    "short stature",
+    "distinct facial features"
+  ],
+  "DIPHTHERIA": [
+    "gray throat membrane",
+    "weakness",
+    "difficulty swallowing",
+    "neck swelling",
+    "sore throat",
+    "fever"
+  ],
+  "EPILEPSY": [
+    "convulsions",
+    "recurrent seizures",
+    "muscle rigidity",
+    "loss of consciousness",
+    "staring spells",
+    "confusion after seizure",
+    "aura sensations"
+  ],
+  "ECZEMA": [
+    "scaling",
+    "itchy skin",
+    "cracking",
+    "redness",
+    "dry patches",
+    "oozing lesions",
+    "skin thickening"
+  ],
+  "ENDOMETRIOSIS": [
+    "chronic abdominal pain",
+    "pelvic pain",
+    "fatigue",
+    "painful menstruation",
+    "infertility",
+    "pain during intercourse",
+    "heavy menstrual bleeding"
+  ],
+  "ENCEPHALITIS": [
+    "memory loss",
+    "confusion",
+    "seizures",
+    "behavioral changes",
+    "headache",
+    "altered consciousness",
+    "fever"
+  ],
+  "EMPHYSEMA": [
+    "weight loss",
+    "exercise intolerance",
+    "chronic cough",
+    "fatigue",
+    "chest tightness",
+    "shortness of breath",
+    "wheezing"
+  ],
+  "ESOPHAGITIS": [
+    "chest pain",
+    "difficulty swallowing",
+    "painful swallowing",
+    "food impaction",
+    "acid regurgitation",
+    "heartburn",
+    "nausea"
+  ],
+  "EBOLA_VIRUS_DISEASE": [
+    "external bleeding",
+    "vomiting",
+    "internal bleeding",
+    "muscle pain",
+    "high fever",
+    "diarrhea",
+    "severe headache"
+  ],
+  "FEVER": [
+    "loss of appetite",
+    "fatigue",
+    "sweating",
+    "elevated body temperature",
+    "headache",
+    "chills",
+    "muscle aches"
+  ],
+  "FIBROMYALGIA": [
+    "muscle stiffness",
+    "memory problems",
+    "fatigue",
+    "headache",
+    "depression",
+    "sleep disturbances",
+    "widespread pain"
+  ],
+  "FLU": [
+    "fatigue",
+    "muscle pain",
+    "headache",
+    "runny nose",
+    "sore throat",
+    "cough",
+    "fever"
+  ],
+  "FOOD_POISONING": [
+    "vomiting",
+    "weakness",
+    "nausea",
+    "dehydration",
+    "abdominal cramps",
+    "diarrhea",
+    "fever"
+  ],
+  "FATTY_LIVER_DISEASE": [
+    "weight gain",
+    "often asymptomatic",
+    "right upper abdominal pain",
+    "weakness",
+    "fatigue"
+  ],
+  "FROSTBITE": [
+    "pale skin",
+    "cold sensation",
+    "swelling",
+    "hard skin",
+    "numbness",
+    "blisters"
+  ],
+  "FOLATE_DEFICIENCY": [
+    "weakness",
+    "fatigue",
+    "shortness of breath",
+    "irritability",
+    "pallor"
+  ],
+  "INFLUENZA": [
+    "body aches",
+    "fatigue",
+    "headache",
+    "chills",
+    "sore throat",
+    "cough",
+    "fever"
+  ],
+  "INSOMNIA": [
+    "frequent awakening",
+    "daytime fatigue",
+    "difficulty sleeping",
+    "poor concentration"
+  ],
+  "IRON_DEFICIENCY_ANEMIA": [
+    "fatigue",
+    "shortness of breath",
+    "brittle nails",
+    "pallor",
+    "dizziness"
+  ],
+  "IRRITABLE_BOWEL_SYNDROME": [
+    "gas",
+    "constipation",
+    "bloating",
+    "diarrhea",
+    "abdominal pain"
+  ],
+  "IMPETIGO": [
+    "honey-colored crusts",
+    "red patches",
+    "itching",
+    "skin sores"
+  ],
+  "INTESTINAL_OBSTRUCTION": [
+    "constipation",
+    "abdominal distension",
+    "abdominal pain",
+    "vomiting"
+  ],
+  "INTERSTITIAL_CYSTITIS": [
+    "painful urination",
+    "frequent urination",
+    "pelvic pain",
+    "urinary urgency"
+  ],
+  "JAUNDICE": [
+    "yellowing of eyes",
+    "fatigue",
+    "yellowing of skin",
+    "dark urine",
+    "itching"
+  ],
+  "JAPANESE_ENCEPHALITIS": [
+    "confusion",
+    "vomiting",
+    "seizures",
+    "headache",
+    "fever"
+  ],
+  "JUVENILE_IDIOPATHIC_ARTHRITIS": [
+    "joint pain",
+    "rash",
+    "swelling",
+    "morning stiffness",
+    "fever"
+  ],
+  "JOINT_DISLOCATION": [
+    "swelling",
+    "deformity",
+    "severe joint pain",
+    "limited movement"
+  ],
+  "JOCK_ITCH": [
+    "groin itching",
+    "scaling",
+    "burning sensation",
+    "red rash"
+  ],
+  "JAW_INFECTION": [
+    "swelling",
+    "difficulty opening mouth",
+    "jaw pain",
+    "fever"
+  ],
+  "JELLYFISH_STING": [
+    "red welts",
+    "itching",
+    "burning sensation",
+    "skin pain"
+  ],
+  "KIDNEY_STONES": [
+    "vomiting",
+    "severe flank pain",
+    "nausea",
+    "hematuria",
+    "urinary urgency"
+  ],
+  "KAWASAKI_DISEASE": [
+    "rash",
+    "swollen hands",
+    "lymphadenopathy",
+    "red eyes",
+    "fever"
+  ],
+  "KLINEFELTER_SYNDROME": [
+    "gynecomastia",
+    "tall stature",
+    "infertility",
+    "small testes"
+  ],
+  "KERATITIS": [
+    "redness",
+    "blurred vision",
+    "eye pain",
+    "light sensitivity"
+  ],
+  "KIDNEY_FAILURE": [
+    "fatigue",
+    "confusion",
+    "reduced urination",
+    "swelling"
+  ],
+  "KAPOSI_SARCOMA": [
+    "swelling",
+    "skin lesions",
+    "fatigue"
+  ],
+  "KYPHOSIS": [
+    "back pain",
+    "stiffness",
+    "rounded back"
+  ],
+  "NEPHROTIC_SYNDROME": [
+    "weight gain",
+    "fatigue",
+    "foamy urine",
+    "edema"
+  ],
+  "NEUROPATHY": [
+    "tingling",
+    "numbness",
+    "muscle weakness",
+    "burning pain"
+  ],
+  "NASOPHARYNGEAL_CANCER": [
+    "neck lump",
+    "nosebleeds",
+    "hearing loss",
+    "nasal blockage"
+  ],
+  "NEONATAL_JAUNDICE": [
+    "yellow eyes",
+    "lethargy",
+    "yellow skin",
+    "poor feeding"
+  ],
+  "NARCOLEPSY": [
+    "excessive daytime sleepiness",
+    "sleep paralysis",
+    "cataplexy"
+  ],
+  "NECROTIZING_FASCIITIS": [
+    "swelling",
+    "severe pain",
+    "skin discoloration",
+    "fever"
+  ],
+  "NON_ALCOHOLIC_FATTY_LIVER_DISEASE": [
+    "fatigue",
+    "abdominal discomfort",
+    "elevated liver enzymes"
+  ],
+  "OBESITY": [
+    "joint pain",
+    "fatigue",
+    "shortness of breath",
+    "excess body fat",
+    "reduced mobility"
+  ],
+  "OSTEOARTHRITIS": [
+    "joint pain",
+    "crepitus",
+    "swelling",
+    "reduced range of motion",
+    "stiffness"
+  ],
+  "OSTEOPOROSIS": [
+    "back pain",
+    "stooped posture",
+    "bone fragility",
+    "loss of height"
+  ],
+  "OTITIS_MEDIA": [
+    "ear discharge",
+    "irritability",
+    "ear pain",
+    "hearing difficulty",
+    "fever"
+  ],
+  "OVARIAN_CANCER": [
+    "weight loss",
+    "abdominal bloating",
+    "pelvic pain",
+    "early satiety",
+    "urinary urgency"
+  ],
+  "OBSTRUCTIVE_SLEEP_APNEA": [
+    "morning headaches",
+    "loud snoring",
+    "poor concentration",
+    "daytime sleepiness"
+  ],
+  "ORAL_CANDIDIASIS": [
+    "difficulty swallowing",
+    "white oral plaques",
+    "loss of taste",
+    "mouth soreness"
+  ],
+  "PNEUMONIA": [
+    "chest pain",
+    "fatigue",
+    "shortness of breath",
+    "cough",
+    "fever"
+  ],
+  "PARKINSONS_DISEASE": [
+    "postural instability",
+    "tremor",
+    "muscle rigidity",
+    "bradykinesia"
+  ],
+  "PEPTIC_ULCER_DISEASE": [
+    "epigastric pain",
+    "vomiting",
+    "bloating",
+    "heartburn",
+    "nausea"
+  ],
+  "PANCREATITIS": [
+    "fever",
+    "severe abdominal pain",
+    "vomiting",
+    "nausea"
+  ],
+  "PROSTATE_CANCER": [
+    "urinary hesitancy",
+    "nocturia",
+    "pelvic discomfort",
+    "weak stream"
+  ],
+  "PSORIASIS": [
+    "itching",
+    "nail changes",
+    "skin redness",
+    "scaly plaques"
+  ],
+  "PULMONARY_EMBOLISM": [
+    "cough",
+    "tachycardia",
+    "chest pain",
+    "sudden shortness of breath"
+  ],
+  "Q_FEVER": [
+    "fatigue",
+    "muscle pain",
+    "headache",
+    "cough",
+    "fever"
+  ],
+  "QUADRIPLEGIA": [
+    "loss of sensation",
+    "paralysis of all limbs",
+    "breathing difficulty"
+  ],
+  "QUINSY": [
+    "difficulty swallowing",
+    "muffled voice",
+    "severe sore throat",
+    "fever"
+  ],
+  "QUADRICEPS_STRAIN": [
+    "swelling",
+    "thigh pain",
+    "muscle weakness",
+    "reduced mobility"
+  ],
+  "QUICKLY_PROGRESSIVE_GLOMERULONEPHRITIS": [
+    "fatigue",
+    "edema",
+    "hematuria",
+    "hypertension"
+  ],
+  "QUADRANTANOPIA": [
+    "visual field defects",
+    "partial vision loss"
+  ],
+  "QUINCKE_EDEMA": [
+    "difficulty breathing",
+    "tongue swelling",
+    "facial swelling",
+    "lip swelling"
+  ],
+  "RHEUMATOID_ARTHRITIS": [
+    "joint pain",
+    "joint swelling",
+    "fatigue",
+    "morning stiffness",
+    "fever"
+  ],
+  "RESPIRATORY_SYNCYTIAL_VIRUS": [
+    "difficulty breathing",
+    "runny nose",
+    "wheezing",
+    "cough",
+    "fever"
+  ],
+  "RENAL_CELL_CARCINOMA": [
+    "weight loss",
+    "fatigue",
+    "flank pain",
+    "hematuria",
+    "fever"
+  ],
+  "RABIES": [
+    "confusion",
+    "agitation",
+    "headache",
+    "hydrophobia",
+    "fever"
+  ],
+  "ROSACEA": [
+    "facial redness",
+    "skin sensitivity",
+    "flushing",
+    "visible blood vessels"
+  ],
+  "RETINAL_DETACHMENT": [
+    "floaters",
+    "blurred vision",
+    "flashes of light",
+    "shadow in vision"
+  ],
+  "RICKETS": [
+    "skeletal deformities",
+    "delayed growth",
+    "muscle weakness",
+    "bone pain"
+  ],
+  "STROKE": [
+    "confusion",
+    "speech difficulty",
+    "arm weakness",
+    "vision loss",
+    "facial droop"
+  ],
+  "SEPSIS": [
+    "confusion",
+    "rapid heart rate",
+    "shortness of breath",
+    "fever"
+  ],
+  "SYSTEMIC_SCLEROSIS": [
+    "joint pain",
+    "skin thickening",
+    "fatigue",
+    "raynaud phenomenon"
+  ],
+  "SINUSITIS": [
+    "thick nasal discharge",
+    "nasal congestion",
+    "headache",
+    "facial pain"
+  ],
+  "SICKLE_CELL_DISEASE": [
+    "fatigue",
+    "anemia",
+    "frequent infections",
+    "pain crises"
+  ],
+  "SCHIZOPHRENIA": [
+    "disorganized thinking",
+    "hallucinations",
+    "social withdrawal",
+    "delusions"
+  ],
+  "SPINAL_STENOSIS": [
+    "difficulty walking",
+    "numbness",
+    "leg pain",
+    "back pain"
+  ],
+  "VARICELLA": [
+    "fatigue",
+    "fluid-filled blisters",
+    "itchy rash",
+    "fever"
+  ],
+  "VERTIGO": [
+    "nausea",
+    "balance problems",
+    "vomiting",
+    "spinning sensation"
+  ],
+  "VENOUS_THROMBOEMBOLISM": [
+    "warmth",
+    "shortness of breath",
+    "pain",
+    "leg swelling"
+  ],
+  "VIRAL_HEPATITIS": [
+    "fatigue",
+    "jaundice",
+    "abdominal pain",
+    "nausea"
+  ],
+  "VITILIGO": [
+    "sun sensitivity",
+    "white patches",
+    "loss of skin pigment"
+  ],
+  "VAGINITIS": [
+    "discharge",
+    "odor",
+    "vaginal itching",
+    "burning"
+  ],
+  "VENTRICULAR_TACHYCARDIA": [
+    "palpitations",
+    "dizziness",
+    "chest pain",
+    "syncope"
+  ],
+  "WHOOPING_COUGH": [
+    "fatigue",
+    "vomiting after cough",
+    "severe coughing",
+    "whooping sound"
+  ],
+  "WILSONS_DISEASE": [
+    "neurologic symptoms",
+    "behavioral changes",
+    "liver dysfunction"
+  ],
+  "WEST_NILE_VIRUS": [
+    "fatigue",
+    "headache",
+    "body aches",
+    "fever"
+  ],
+  "WEGENER_GRANULOMATOSIS": [
+    "fatigue",
+    "nosebleeds",
+    "cough",
+    "sinus pain"
+  ],
+  "WARTS": [
+    "rough texture",
+    "skin growths",
+    "pain with pressure"
+  ],
+  "WHIPLASH_INJURY": [
+    "dizziness",
+    "neck pain",
+    "headache",
+    "stiffness"
+  ],
+  "WERNICKE_ENCEPHALOPATHY": [
+    "ataxia",
+    "confusion",
+    "eye movement abnormalities"
+  ],
+  "XEROSTOMIA": [
+    "difficulty swallowing",
+    "altered taste",
+    "dry mouth",
+    "tooth decay",
+    "mouth soreness"
+  ],
+  "XANTHELASMA": [
+    "cosmetic concern",
+    "yellow eyelid plaques"
+  ],
+  "XANTHOMATOSIS": [
+    "tendon deposits",
+    "joint discomfort",
+    "yellow skin nodules"
+  ],
+  "XEROPHTHALMIA": [
+    "night blindness",
+    "dry eyes",
+    "eye irritation",
+    "blurred vision"
+  ],
+  "X_LINKED_AGAMMAGLOBULINEMIA": [
+    "poor antibody response",
+    "chronic diarrhea",
+    "recurrent infections"
+  ],
+  "XERODERMA_PIGMENTOSUM": [
+    "early skin aging",
+    "skin lesions",
+    "extreme sun sensitivity"
+  ],
+  "XIPHODYNIA": [
+    "epigastric pain",
+    "lower chest pain",
+    "pain with movement"
+  ],
+  "YELLOW_FEVER": [
+    "vomiting",
+    "muscle pain",
+    "chills",
+    "jaundice",
+    "fever"
+  ],
+  "YERSINIOSIS": [
+    "diarrhea",
+    "abdominal pain",
+    "vomiting",
+    "fever"
+  ],
+  "YAWs": [
+    "swelling",
+    "skin ulcers",
+    "bone pain",
+    "fever"
+  ],
+  "YEAST_INFECTION": [
+    "redness",
+    "thick discharge",
+    "itching",
+    "burning sensation"
+  ],
+  "YOUNG_ONSET_PARKINSONS": [
+    "tremor",
+    "balance issues",
+    "muscle rigidity",
+    "bradykinesia"
+  ],
+  "Y_CHROMOSOME_INFERTILITY": [
+    "low sperm count",
+    "infertility"
+  ],
+  "YIPS": [
+    "muscle spasms",
+    "loss of fine motor control",
+    "performance anxiety"
+  ]
+}

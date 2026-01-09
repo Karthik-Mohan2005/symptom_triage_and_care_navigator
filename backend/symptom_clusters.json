@@ -1,0 +1,59 @@
+{
+  "respiratory": [
+    "cough",
+    "chronic cough",
+    "dry cough",
+    "severe coughing",
+    "shortness of breath",
+    "breathing difficulty",
+    "wheezing",
+    "chest tightness",
+    "sputum production"
+  ],
+  "gastrointestinal": [
+    "abdominal pain",
+    "abdominal cramps",
+    "bloating",
+    "nausea",
+    "vomiting",
+    "diarrhea",
+    "constipation",
+    "blood in stool"
+  ],
+  "neurological": [
+    "headache",
+    "dizziness",
+    "confusion",
+    "memory loss",
+    "seizures",
+    "loss of consciousness",
+    "blurred vision"
+  ],
+  "cardiac": [
+    "chest pain",
+    "palpitations",
+    "tachycardia",
+    "syncope",
+    "arm or jaw pain"
+  ],
+  "skin": [
+    "rash",
+    "itching",
+    "skin redness",
+    "skin discoloration",
+    "blisters"
+  ],
+  "mental_health": [
+    "depression",
+    "anxiety",
+    "hallucinations",
+    "persistent sadness",
+    "loss of interest"
+  ],
+  "pregnancy": [
+    "vaginal bleeding",
+    "reduced fetal movement",
+    "abdominal pain",
+    "fluid leakage"
+  ]
+}

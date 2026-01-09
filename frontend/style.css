@@ -1,0 +1,30 @@
+body {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("for.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.15);
+  border-radius: 25px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.btn-custom {
+  background: white;
+  color: black;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+a {
+  color: #e0e0e0;
+  text-decoration: none;
+}

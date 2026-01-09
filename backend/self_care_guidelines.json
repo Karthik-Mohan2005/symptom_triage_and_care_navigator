@@ -1,0 +1,31 @@
+{
+  "LOW": {
+    "fever": [
+      "Take adequate rest and avoid physical exertion.",
+      "Drink plenty of fluids such as water, oral rehydration solution, or clear soups.",
+      "Use a fever-reducing medicine like paracetamol/acetaminophen if needed (avoid overdose).",
+      "Monitor body temperature twice a day.",
+      "Avoid cold exposure and keep the body warm."
+    ],
+    "cough": [
+      "Drink warm fluids such as herbal tea or warm water.",
+      "Use honey (for adults and children over 1 year) to soothe throat irritation.",
+      "Avoid smoking and secondhand smoke.",
+      "Use steam inhalation or humidified air to ease coughing.",
+      "Rest your voice and avoid talking excessively."
+    ],
+    "general": [
+      "Stay at home and avoid close contact with others.",
+      "Wash hands frequently with soap and water.",
+      "Cover mouth and nose while coughing or sneezing.",
+      "Get adequate sleep to support immune recovery."
+    ],
+    "warning_signs": [
+      "Fever lasting more than 3 days",
+      "Worsening cough or breathing difficulty",
+      "Chest pain",
+      "Persistent vomiting",
+      "Extreme weakness or confusion"
+    ]
+  }
+}

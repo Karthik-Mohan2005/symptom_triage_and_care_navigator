@@ -1,0 +1,17 @@
+{
+  "LOW": {
+    "message": "Symptoms are mild. Home care is recommended.",
+    "show_remedies": true,
+    "show_warning_signs": true
+  },
+  "MODERATE": {
+    "message": "Symptoms may worsen. Medical consultation is advised.",
+    "show_remedies": false,
+    "show_warning_signs": true
+  },
+  "CRITICAL": {
+    "message": "Emergency condition detected. Seek immediate medical care.",
+    "show_remedies": false,
+    "show_warning_signs": false
+  }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalized Care Taker Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+			margin: 0;
+			height: 100vh;
+
+			background-image: url("loginpic.jpg");
+        /* FITS screen perfectly */
+			background-position: center;   /* Keeps image centered */
+			background-repeat: no-repeat;  
+			background-attachment: fixed;  /* Smooth scrolling */
+			background-size: contain;
+			background-color: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+		}
+
+
+        /* Dark overlay for professional look */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: -1;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 360px;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1d976c;
+        }
+
+        .login-container p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1d976c;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1d976c;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #158a5f;
+        }
+
+        .extra-links {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        .extra-links a {
+            color: #1d976c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Personalized Care Taker</h2>
+    <p>Secure Medical Login</p>
+
+
+
+    <form onsubmit="return validateLogin()">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+       <button type="submit">Login</button>
+
+    </form>
+
+    <div class="extra-links">
+        <p>New user? <a href= "signup.html">Create an account</a></p>
+        <p><a href="forgot.html">Forgot password?</a></p>
+    </div>
+
+</div>
+<script >function signup() {
+
+  fetch("http://localhost:5000/api/auth/signup", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    if (data.message === "Signup successful")
+      window.location.href = "login.html";
+  });
+}
+
+function login() {
+  fetch("http://localhost:5000/api/auth/login", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      email: email.value,
+      password: password.value
+    })
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message));
+}
+
+function forgot() {
+  fetch("http://localhost:5000/api/auth/forgot", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ email: email.value })
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message));
+
+}
+
+
+function validateLogin() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    /* Dummy registered user (for demo) */
+    const registeredEmail = "karthik.mohan2210@gmail.com";
+    const registeredPassword = "1234567";
+
+    if (email === registeredEmail && password === registeredPassword) {
+        // ✅ Correct login → go to dashboard
+        window.location.href = "index.html";
+    } else {
+        // ❌ Wrong login → warning
+        alert("No registration found! Please sign up first.");
+    }
+
+    return false; // 🔑 Prevent form reload
+}
+</script>
+
+</body>
+</html>

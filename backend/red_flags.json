@@ -1,0 +1,935 @@
+{
+  "ASTHMA": {
+    "cyanosis": 4,
+    "difficulty speaking": 3,
+    "poor response to inhaler": 2,
+    "rapid breathing": 2,
+    "use of accessory muscles": 3,
+    "respiratory failure": 5
+  },
+
+  "ANEMIA": {
+    "syncope": 4,
+    "chest pain": 3,
+    "severe weakness": 2,
+    "confusion": 4,
+    "rapid heart rate": 2
+  },
+
+  "APPENDICITIS": {
+    "rebound tenderness": 3,
+    "peritonitis": 5,
+    "perforation": 5,
+    "sepsis": 5,
+    "severe abdominal rigidity": 4
+  },
+
+  "ALZHEIMERS_DISEASE": {
+    "rapid cognitive decline": 3,
+    "wandering behavior": 2,
+    "loss of self-care ability": 4,
+    "unsafe living conditions": 4
+  },
+
+  "ARTHRITIS": {
+    "joint deformity": 3,
+    "systemic inflammation": 4,
+    "rapid joint destruction": 4,
+    "fever with joint pain": 3
+  },
+
+  "ATHLETES_FOOT": {
+    "secondary bacterial infection": 3,
+    "spreading cellulitis": 4,
+    "painful swelling": 2
+  },
+
+  "ACNE": {
+    "severe nodulocystic acne": 2,
+    "permanent scarring": 2,
+    "secondary infection": 3
+  },
+
+  "BRONCHITIS": {
+    "bloody sputum": 4,
+    "high fever": 3,
+    "severe shortness of breath": 4,
+    "chest pain": 3,
+    "cyanosis": 4
+  },
+
+  "BREAST_CANCER": {
+    "hard fixed mass": 4,
+    "axillary lymphadenopathy": 3,
+    "skin ulceration": 4,
+    "rapid breast changes": 4
+  },
+
+  "BIPOLAR_DISORDER": {
+    "suicidal ideation": 5,
+    "psychosis": 4,
+    "severe functional impairment": 4,
+    "risk-taking behavior": 3
+  },
+
+  "BLOOD_PRESSURE_HIGH": {
+    "hypertensive crisis": 5,
+    "stroke": 5,
+    "heart attack": 5,
+    "vision loss": 4
+  },
+
+  "BRAIN_TUMOR": {
+    "progressive neurologic deficits": 4,
+    "persistent vomiting": 3,
+    "loss of consciousness": 5,
+    "rapid symptom progression": 4
+  },
+
+  "BOTULISM": {
+    "respiratory failure": 5,
+    "paralysis": 5,
+    "rapid progression": 4
+  },
+
+  "BRUCELLOSIS": {
+    "chronic infection": 3,
+    "endocarditis": 5,
+    "neurologic involvement": 4
+  },
+
+  "COVID_19": {
+    "severe respiratory distress": 5,
+    "oxygen saturation below normal": 5,
+    "confusion": 4,
+    "cyanosis": 4,
+    "chest pain": 4
+  },
+
+  "CHICKENPOX": {
+    "secondary bacterial infection": 3,
+    "encephalitis": 5,
+    "pneumonia": 4,
+    "severe dehydration": 4
+  },
+
+  "COPD": {
+    "acute exacerbation": 4,
+    "respiratory failure": 5,
+    "cyanosis": 4,
+    "confusion": 4
+  },
+
+  "CORONARY_ARTERY_DISEASE": {
+    "acute myocardial infarction": 5,
+    "syncope": 4,
+    "severe chest pain": 5,
+    "cardiac arrest": 5
+  },
+
+  "CROHNS_DISEASE": {
+    "intestinal obstruction": 4,
+    "fistula formation": 4,
+    "severe dehydration": 4,
+    "sepsis": 5
+  },
+
+  "CELLULITIS": {
+    "rapid spread": 4,
+    "necrotizing infection": 5,
+    "sepsis": 5,
+    "severe pain": 4
+  },
+
+  "COLORECTAL_CANCER": {
+    "bowel obstruction": 5,
+    "unexplained anemia": 3,
+    "persistent bleeding": 4
+  },
+
+  "DIABETES_MELLITUS": {
+    "diabetic ketoacidosis": 5,
+    "severe hypoglycemia": 5,
+    "confusion": 4,
+    "loss of consciousness": 5,
+    "severe dehydration": 4
+  },
+
+  "DENGUE_FEVER": {
+    "bleeding": 5,
+    "severe abdominal pain": 4,
+    "persistent vomiting": 4,
+    "shock": 5,
+    "plasma leakage": 5
+  },
+
+  "DEPRESSION": {
+    "suicidal ideation": 5,
+    "self-harm": 5,
+    "psychosis": 4,
+    "severe functional impairment": 4
+  },
+
+  "DERMATITIS": {
+    "secondary infection": 3,
+    "widespread inflammation": 3,
+    "systemic symptoms": 4
+  },
+
+  "DIVERTICULITIS": {
+    "bowel perforation": 5,
+    "abscess": 4,
+    "sepsis": 5,
+    "intestinal obstruction": 5
+  },
+
+  "DOWN_SYNDROME": {
+    "congenital heart defects": 5,
+    "respiratory infections": 4,
+    "thyroid dysfunction": 3
+  },
+
+  "DIPHTHERIA": {
+    "airway obstruction": 5,
+    "myocarditis": 5,
+    "neurologic complications": 4
+  },
+  "EPILEPSY": {
+    "status epilepticus": 5,
+    "frequent uncontrolled seizures": 4,
+    "head injury after seizure": 4,
+    "prolonged loss of consciousness": 5
+  },
+
+  "ECZEMA": {
+    "secondary skin infection": 3,
+    "extensive body involvement": 3,
+    "severe sleep disturbance": 2
+  },
+
+  "ENDOMETRIOSIS": {
+    "severe chronic pain": 3,
+    "bowel or bladder involvement": 4,
+    "infertility complications": 3
+  },
+
+  "ENCEPHALITIS": {
+    "rapid neurologic decline": 5,
+    "coma": 5,
+    "severe seizures": 5,
+    "respiratory failure": 5
+  },
+
+  "EMPHYSEMA": {
+    "respiratory failure": 5,
+    "cyanosis": 4,
+    "severe hypoxia": 5
+  },
+
+  "ESOPHAGITIS": {
+    "bleeding": 4,
+    "severe pain": 3,
+    "weight loss": 3,
+    "esophageal perforation": 5
+  },
+
+  "EBOLA_VIRUS_DISEASE": {
+    "hemorrhagic shock": 5,
+    "multi-organ failure": 5,
+    "rapid deterioration": 5
+  },
+
+  "FEVER": {
+    "very high temperature": 4,
+    "persistent fever": 3,
+    "seizures": 5,
+    "confusion": 4,
+    "dehydration": 3
+  },
+
+  "FIBROMYALGIA": {
+    "severe functional impairment": 3,
+    "coexisting autoimmune disease": 3
+  },
+
+  "FLU": {
+    "respiratory distress": 4,
+    "persistent vomiting": 3,
+    "confusion": 4,
+    "chest pain": 4
+  },
+
+  "FOOD_POISONING": {
+    "bloody diarrhea": 4,
+    "severe dehydration": 4,
+    "persistent vomiting": 3,
+    "high fever": 3
+  },
+
+  "FATTY_LIVER_DISEASE": {
+    "cirrhosis": 5,
+    "liver failure": 5,
+    "jaundice": 4
+  },
+
+  "FROSTBITE": {
+    "tissue necrosis": 5,
+    "infection": 4,
+    "gangrene": 5
+  },
+
+  "FOLATE_DEFICIENCY": {
+    "severe anemia": 4,
+    "neurologic symptoms": 4
+  },
+
+  "GASTRITIS": {
+    "gastrointestinal bleeding": 5,
+    "severe pain": 3,
+    "persistent vomiting": 3
+  },
+
+  "GERD": {
+    "weight loss": 3,
+    "bleeding": 4,
+    "severe chest pain": 4
+  },
+
+  "GLAUCOMA": {
+    "sudden vision loss": 5,
+    "severe eye pain": 4
+  },
+
+  "GOUT": {
+    "joint destruction": 4,
+    "infection mimicry": 3
+  },
+
+  "GALLSTONES": {
+    "cholecystitis": 4,
+    "pancreatitis": 5,
+    "jaundice": 4
+  },
+
+  "GIARDIASIS": {
+    "chronic dehydration": 4,
+    "malnutrition": 4
+  },
+
+  "GONORRHEA": {
+    "pelvic inflammatory disease": 4,
+    "infertility": 4
+  },
+
+  "HYPERTENSION": {
+    "stroke": 5,
+    "heart attack": 5,
+    "hypertensive crisis": 5
+  },
+
+  "HEPATITIS_B": {
+    "liver failure": 5,
+    "cirrhosis": 5
+  },
+
+  "HEART_FAILURE": {
+    "pulmonary edema": 5,
+    "shock": 5
+  },
+
+  "HYPOTHYROIDISM": {
+    "myxedema coma": 5
+  },
+
+  "HYPERTHYROIDISM": {
+    "thyroid storm": 5
+  },
+
+  "HIV_INFECTION": {
+    "opportunistic infections": 5,
+    "severe immunosuppression": 5
+  },
+
+  "HEMORRHOIDS": {
+    "severe bleeding": 4,
+    "thrombosis": 4
+  },
+
+  "INFLUENZA": {
+    "respiratory distress": 4,
+    "confusion": 4,
+    "chest pain": 4,
+    "persistent vomiting": 3
+  },
+
+  "INSOMNIA": {
+    "severe daytime impairment": 3,
+    "mental health deterioration": 4
+  },
+
+  "IRON_DEFICIENCY_ANEMIA": {
+    "syncope": 4,
+    "severe weakness": 3
+  },
+
+  "IRRITABLE_BOWEL_SYNDROME": {
+    "weight loss": 3,
+    "bloody stool": 4,
+    "anemia": 3
+  },
+
+  "IMPETIGO": {
+    "spreading infection": 4,
+    "systemic illness": 4
+  },
+
+  "INTESTINAL_OBSTRUCTION": {
+    "bowel perforation": 5,
+    "shock": 5
+  },
+
+  "INTERSTITIAL_CYSTITIS": {
+    "severe pain": 3,
+    "hematuria": 4
+  },
+
+  "JAUNDICE": {
+    "acute liver failure": 5,
+    "biliary obstruction": 5
+  },
+
+  "JAPANESE_ENCEPHALITIS": {
+    "coma": 5,
+    "neurologic deficits": 5
+  },
+
+  "JUVENILE_IDIOPATHIC_ARTHRITIS": {
+    "growth impairment": 4,
+    "uveitis": 4
+  },
+
+  "JOINT_DISLOCATION": {
+    "neurovascular compromise": 5
+  },
+
+  "JOCK_ITCH": {
+    "secondary infection": 3
+  },
+
+  "JAW_INFECTION": {
+    "airway compromise": 5,
+    "spread of infection": 4
+  },
+
+  "JELLYFISH_STING": {
+    "anaphylaxis": 5,
+    "systemic toxicity": 4
+  },
+
+  "KIDNEY_STONES": {
+    "urinary obstruction": 4,
+    "infection": 4,
+    "renal failure": 5
+  },
+
+  "KAWASAKI_DISEASE": {
+    "coronary aneurysm": 5
+  },
+
+  "KLINEFELTER_SYNDROME": {
+    "metabolic syndrome": 3
+  },
+
+  "KERATITIS": {
+    "vision loss": 5
+  },
+
+  "KIDNEY_FAILURE": {
+    "electrolyte imbalance": 5,
+    "uremia": 5
+  },
+
+  "KAPOSI_SARCOMA": {
+    "organ involvement": 5
+  },
+
+  "KYPHOSIS": {
+    "neurologic deficits": 4
+  },
+
+  "LIVER_CIRRHOSIS": {
+    "variceal bleeding": 5,
+    "hepatic encephalopathy": 5,
+    "ascites infection": 5
+  },
+
+  "LUNG_CANCER": {
+    "massive hemoptysis": 5,
+    "severe respiratory distress": 5
+  },
+
+  "LUPUS": {
+    "renal involvement": 5,
+    "neurologic symptoms": 4
+  },
+
+  "LARYNGITIS": {
+    "airway compromise": 5,
+    "persistent hoarseness": 3
+  },
+
+  "LEUKEMIA": {
+    "severe anemia": 4,
+    "bleeding": 5,
+    "sepsis": 5
+  },
+
+  "LYME_DISEASE": {
+    "neurologic involvement": 4,
+    "cardiac symptoms": 4
+  },
+  "MIGRAINE": {
+    "sudden severe headache": 5,
+    "neurologic deficit": 4
+  },
+
+  "MALARIA": {
+    "severe anemia": 4,
+    "cerebral malaria": 5
+  },
+
+  "MULTIPLE_SCLEROSIS": {
+    "rapid neurologic decline": 4
+  },
+
+  "MYOCARDIAL_INFARCTION": {
+    "cardiac arrest": 5,
+    "cardiogenic shock": 5
+  },
+
+  "MENINGITIS": {
+    "seizures": 5,
+    "coma": 5
+  },
+
+  "MUSCULAR_DYSTROPHY": {
+    "respiratory failure": 5
+  },
+
+  "MITRAL_VALVE_PROLAPSE": {
+    "severe regurgitation": 4
+  },
+
+  "NEPHROTIC_SYNDROME": {
+    "thromboembolism": 5,
+    "severe infection": 5
+  },
+
+  "NEUROPATHY": {
+    "rapid progression": 4,
+    "motor impairment": 4
+  },
+
+  "NASOPHARYNGEAL_CANCER": {
+    "cranial nerve involvement": 5
+  },
+
+  "NEONATAL_JAUNDICE": {
+    "kernicterus": 5
+  },
+
+  "NARCOLEPSY": {
+    "sudden muscle collapse": 4
+  },
+
+  "NECROTIZING_FASCIITIS": {
+    "sepsis": 5,
+    "rapid tissue destruction": 5
+  },
+
+  "NON_ALCOHOLIC_FATTY_LIVER_DISEASE": {
+    "cirrhosis development": 5
+  },
+
+  "OBESITY": {
+    "cardiovascular disease": 4,
+    "type 2 diabetes": 4,
+    "sleep apnea": 4
+  },
+
+  "OSTEOARTHRITIS": {
+    "severe functional limitation": 3,
+    "joint deformity": 4
+  },
+
+  "OSTEOPOROSIS": {
+    "fragility fractures": 4,
+    "vertebral collapse": 5
+  },
+
+  "OTITIS_MEDIA": {
+    "mastoiditis": 4,
+    "hearing loss": 3
+  },
+
+  "OVARIAN_CANCER": {
+    "ascites": 4,
+    "bowel obstruction": 5
+  },
+
+  "OBSTRUCTIVE_SLEEP_APNEA": {
+    "cardiovascular complications": 4
+  },
+
+  "ORAL_CANDIDIASIS": {
+    "immunosuppression": 4
+  },
+
+  "PNEUMONIA": {
+    "respiratory failure": 5,
+    "sepsis": 5
+  },
+
+  "PARKINSONS_DISEASE": {
+    "rapid functional decline": 4
+  },
+
+  "PEPTIC_ULCER_DISEASE": {
+    "GI bleeding": 5,
+    "perforation": 5
+  },
+
+  "PANCREATITIS": {
+    "organ failure": 5,
+    "necrosis": 5
+  },
+
+  "PROSTATE_CANCER": {
+    "bone metastasis": 5,
+    "urinary obstruction": 4
+  },
+
+  "PSORIASIS": {
+    "psoriatic arthritis": 4
+  },
+
+  "PULMONARY_EMBOLISM": {
+    "hemodynamic instability": 5,
+    "cardiac arrest": 5
+  },
+
+  "Q_FEVER": {
+    "chronic endocarditis": 5
+  },
+
+  "QUADRIPLEGIA": {
+    "respiratory failure": 5
+  },
+
+  "QUINSY": {
+    "airway obstruction": 5
+  },
+
+  "QUADRICEPS_STRAIN": {
+    "complete muscle rupture": 4
+  },
+
+  "QUICKLY_PROGRESSIVE_GLOMERULONEPHRITIS": {
+    "acute renal failure": 5
+  },
+
+  "QUADRANTANOPIA": {
+    "stroke": 5,
+    "brain tumor": 5
+  },
+
+  "QUINCKE_EDEMA": {
+    "airway compromise": 5,
+    "anaphylaxis": 5
+  },
+
+  "RHEUMATOID_ARTHRITIS": {
+    "joint deformity": 4,
+    "systemic organ involvement": 5
+  },
+
+  "RESPIRATORY_SYNCYTIAL_VIRUS": {
+    "apnea": 5,
+    "severe respiratory distress": 5
+  },
+
+  "RENAL_CELL_CARCINOMA": {
+    "metastatic disease": 5
+  },
+
+  "RABIES": {
+    "neurologic deterioration": 5,
+    "respiratory failure": 5
+  },
+
+  "ROSACEA": {
+    "ocular involvement": 4
+  },
+
+  "RETINAL_DETACHMENT": {
+    "sudden vision loss": 5
+  },
+
+  "RICKETS": {
+    "severe bone deformity": 4
+  },
+
+  "STROKE": {
+    "loss of consciousness": 5,
+    "rapid neurologic decline": 5
+  },
+
+  "SEPSIS": {
+    "septic shock": 5,
+    "organ failure": 5
+  },
+
+  "SYSTEMIC_SCLEROSIS": {
+    "pulmonary hypertension": 5,
+    "renal crisis": 5
+  },
+
+  "SINUSITIS": {
+    "orbital infection": 4,
+    "intracranial spread": 5
+  },
+
+  "SICKLE_CELL_DISEASE": {
+    "acute chest syndrome": 5,
+    "stroke": 5
+  },
+
+  "SCHIZOPHRENIA": {
+    "suicidal ideation": 5,
+    "severe psychosis": 4
+  },
+
+  "SPINAL_STENOSIS": {
+    "bowel or bladder dysfunction": 5
+  },
+
+  "TUBERCULOSIS": {
+    "respiratory failure": 5,
+    "disseminated disease": 5
+  },
+
+  "TYPE_2_DIABETES": {
+    "diabetic ketoacidosis": 5,
+    "hypoglycemia": 4
+  },
+
+  "THYROID_CANCER": {
+    "airway compromise": 5,
+    "metastasis": 5
+  },
+
+  "TETANUS": {
+    "respiratory failure": 5
+  },
+
+  "THROMBOCYTOPENIA": {
+    "severe hemorrhage": 5
+  },
+
+  "TONSILLITIS": {
+    "airway obstruction": 5,
+    "abscess formation": 4
+  },
+
+  "TRACHOMA": {
+    "corneal scarring": 4,
+    "blindness": 5
+  },
+
+  "URINARY_TRACT_INFECTION": {
+    "fever": 3,
+    "flank pain": 4,
+    "sepsis": 5
+  },
+
+  "ULCERATIVE_COLITIS": {
+    "toxic megacolon": 5,
+    "severe bleeding": 5
+  },
+
+  "UREMIA": {
+    "pericarditis": 5,
+    "encephalopathy": 5
+  },
+
+  "URTICARIA": {
+    "angioedema": 5,
+    "anaphylaxis": 5
+  },
+
+  "URETHRITIS": {
+    "ascending infection": 4
+  },
+
+  "UMBILICAL_HERNIA": {
+    "incarceration": 5,
+    "strangulation": 5
+  },
+
+  "UVEITIS": {
+    "vision loss": 5
+  },
+
+  "VARICELLA": {
+    "secondary infection": 4,
+    "pneumonia": 5
+  },
+
+  "VERTIGO": {
+    "neurologic deficit": 4,
+    "stroke signs": 5
+  },
+
+  "VENOUS_THROMBOEMBOLISM": {
+    "pulmonary embolism": 5
+  },
+
+  "VIRAL_HEPATITIS": {
+    "acute liver failure": 5
+  },
+
+  "VITILIGO": {
+    "psychological distress": 2
+  },
+
+  "VAGINITIS": {
+    "pelvic inflammatory disease": 4
+  },
+
+  "VENTRICULAR_TACHYCARDIA": {
+    "cardiac arrest": 5
+  },
+
+  "WHOOPING_COUGH": {
+    "apnea": 5,
+    "cyanosis": 4
+  },
+
+  "WILSONS_DISEASE": {
+    "acute liver failure": 5
+  },
+
+  "WEST_NILE_VIRUS": {
+    "encephalitis": 5,
+    "paralysis": 5
+  },
+
+  "WEGENER_GRANULOMATOSIS": {
+    "renal failure": 5,
+    "pulmonary hemorrhage": 5
+  },
+
+  "WARTS": {
+    "rapid growth": 3,
+    "bleeding": 3
+  },
+
+  "WHIPLASH_INJURY": {
+    "neurologic deficit": 4
+  },
+
+  "WERNICKE_ENCEPHALOPATHY": {
+    "coma": 5,
+    "irreversible brain damage": 5
+  },
+
+  "XEROSTOMIA": {
+    "severe dehydration": 4,
+    "oral infections": 3
+  },
+
+  "XANTHELASMA": {
+    "underlying lipid disorder": 3
+  },
+
+  "XANTHOMATOSIS": {
+    "premature cardiovascular disease": 5
+  },
+
+  "XEROPHTHALMIA": {
+    "corneal ulceration": 5,
+    "vision loss": 5
+  },
+
+  "X_LINKED_AGAMMAGLOBULINEMIA": {
+    "severe bacterial infections": 5
+  },
+
+  "XERODERMA_PIGMENTOSUM": {
+    "skin cancer development": 5
+  },
+
+  "XIPHODYNIA": {
+    "rule out cardiac causes": 4
+  },
+
+  "YELLOW_FEVER": {
+    "hemorrhage": 5,
+    "multi-organ failure": 5
+  },
+
+  "YERSINIOSIS": {
+    "sepsis": 5
+  },
+
+  "YAWS": {
+    "bone deformities": 4
+  },
+
+  "YEAST_INFECTION": {
+    "recurrent infections": 3
+  },
+
+  "YOUNG_ONSET_PARKINSONS": {
+    "rapid progression": 4
+  },
+
+  "Y_CHROMOSOME_INFERTILITY": {
+    "hormonal abnormalities": 3
+  },
+
+  "YIPS": {
+    "functional impairment": 3
+  },
+
+  "ZIKA_VIRUS": {
+    "microcephaly in newborns": 5,
+    "neurologic complications": 4
+  },
+
+  "ZOLLINGER_ELLISON_SYNDROME": {
+    "GI bleeding": 5,
+    "perforation": 5
+  },
+
+  "ZOONOTIC_INFLUENZA": {
+    "respiratory failure": 5
+  },
+
+  "ZOSTER_OPHTHALMICUS": {
+    "vision loss": 5
+  },
+
+  "ZYGOMYCOSIS": {
+    "orbital invasion": 5,
+    "brain involvement": 5
+  },
+
+  "ZINC_DEFICIENCY": {
+    "growth retardation": 3
+  },
+
+  "ZYGOTIC_LETHAL_MUTATION": {
+    "recurrent miscarriages": 5
+  }
+}
