@@ -138,16 +138,18 @@
 
 
 
-    <form onsubmit="return validateLogin()">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
+       <form onsubmit="goNext(event)">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="Enter your email">
 
-       <button type="submit">Login</button>
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password">
 
-    </form>
+    <button type="submit">Login</button>
+</form>
+
+
 
     <div class="extra-links">
         <p>New user? <a href= "signup.html">Create an account</a></p>
@@ -173,6 +175,10 @@
     if (data.message === "Signup successful")
       window.location.href = "login.html";
   });
+}
+function goNext(event) {
+    event.preventDefault(); // stop reload
+    window.location.href = "index.html"; // anyone can enter
 }
 
 function login() {
@@ -201,20 +207,9 @@ function forgot() {
 
 
 function validateLogin() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    /* Dummy registered user (for demo) */
-    const registeredEmail = "karthik.mohan2210@gmail.com";
-    const registeredPassword = "1234567";
-
-    if (email === registeredEmail && password === registeredPassword) {
-        // ✅ Correct login → go to dashboard
+   
         window.location.href = "index.html";
-    } else {
-        // ❌ Wrong login → warning
-        alert("No registration found! Please sign up first.");
-    }
+    
 
     return false; // 🔑 Prevent form reload
 }
