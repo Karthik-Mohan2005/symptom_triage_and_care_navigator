@@ -5,7 +5,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
 SENDER_EMAIL = "bhuvakarthiklathamohan@gmail.com"
-APP_PASSWORD = "ppassword"
+APP_PASSWORD = "pesxjmiiqqzgwxhb"
 
 def send_critical_email(to_email, body):
     msg = EmailMessage()

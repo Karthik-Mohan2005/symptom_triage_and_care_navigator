@@ -140,7 +140,7 @@ def triage_step(user_text, state):
 
     response = {"message": None, "options": ["yes", "no"], "triage": None}
 
-    # 1️⃣ COLLECT INITIAL SYMPTOMS
+    # 1 COLLECT INITIAL SYMPTOMS
     if state["stage"] == "collect":
         extracted = extract_symptoms(user_text)
         state["symptoms"].update(extracted)
@@ -150,7 +150,7 @@ def triage_step(user_text, state):
         state["last_question"] = None
         state["stage"] = "followup"
 
-    # 2️⃣ FOLLOW-UP
+    # 2 FOLLOW-UP
     if state["stage"] == "followup":
 
         if state["last_question"]:
@@ -168,7 +168,7 @@ def triage_step(user_text, state):
         state["redflags"] = build_redflag_queue(state["candidates"])
         state["stage"] = "redflag"
 
-    # 3️⃣ RED FLAGS
+    # 3 RED FLAGS
     if state["stage"] == "redflag":
 
         if state.get("last_redflag"):
@@ -184,7 +184,7 @@ def triage_step(user_text, state):
 
         state["stage"] = "done"
 
-    # 4️⃣ FINAL TRIAGE
+    # 4 FINAL TRIAGE
     if state["stage"] == "done":
         response["triage"] = finalize_triage(state["score"], state["symptoms"])
         response["message"] = "Assessment complete."
