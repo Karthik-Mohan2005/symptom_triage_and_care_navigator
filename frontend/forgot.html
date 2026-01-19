@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url("for.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: -1;
+        }
+
+        .reset-container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 380px;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1d976c;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 22px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1d976c;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1d976c;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #158a5f;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .back-link a {
+            color: #1d976c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="reset-container">
+    <h2>Reset Password</h2>
+    <p>Enter your registered email and set a new password</p>
+
+    <form onsubmit="return resetPassword()">
+        <label>Email Address</label>
+        <input type="email" id="email" required>
+
+        <label>New Password</label>
+        <input type="password" id="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirm" required>
+
+        <button type="submit">Update Password</button>
+    </form>
+
+    <div class="back-link">
+        <a href="login.html">Back to Login</a>
+    </div>
+</div>
+
+<script>
+function resetPassword() {
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (password !== confirm) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    fetch("http://127.0.0.1:5000/api/auth/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        if (data.message === "Password updated successfully") {
+            window.location.href = "login.html";
+        }
+    })
+    .catch(() => {
+        alert("Server error. Please try again.");
+    });
+
+    return false;
+}
+</script>
+
+</body>
+</html>

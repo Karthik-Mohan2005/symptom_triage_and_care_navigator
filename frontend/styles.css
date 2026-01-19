@@ -104,7 +104,20 @@ body {
   background: white;
   border-top: 1px solid #ddd;
 }
+.user-profile {
+  margin-top: auto;
+  padding: 14px;
+  font-size: 14px;
+  color: #e5e7eb;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 
+.user-profile::before {
+  content: "👤 ";
+}
+.user-profile span {
+  font-weight: 600;
+}
 
 
 .input-bar button {

@@ -107,70 +107,35 @@
             Already have an account? <a href="login.html">Login</a>
         </div>
     </div>
-<script>function signup() {
-  fetch("http://localhost:5000/api/auth/signup", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({
-      name: name.value,
-      email: email.value,
-      password: password.value,
-      confirmPassword: confirmPassword.value
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    alert(data.message);
-    if (data.message === "Signup successful")
-      window.location.href = "login.html";
-  });
-}
-
-function login() {
-  fetch("http://localhost:5000/api/auth/login", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({
-      email: email.value,
-      password: password.value
-    })
-  })
-  .then(res => res.json())
-  .then(data => alert(data.message));
-}
-
+<script>
 function validateSignup() {
-    const fullname = document.getElementById("fullname").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const confirm = document.getElementById("confirm").value;
+  const name = document.getElementById("fullname").value;
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm").value;
 
-    // 🔐 Password match check
-    if (password !== confirm) {
-        alert("Passwords do not match!");
-        return false;
-    }
-
-    // ✅ (Demo) store user in localStorage
-    localStorage.setItem("registeredEmail", email);
-    localStorage.setItem("registeredPassword", password);
-
-    alert("Account created successfully! Please login.");
-
-    // ✅ Redirect to login page
+  if (password !== confirm) {
+    alert("Passwords do not match");
+    return false;
+  }
+  fetch("http://127.0.0.1:5000/api/auth/signup", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, password })
+})
+.then(res => res.json())
+.then(data => {
+  alert(data.message);
+  if (data.message === "Signup successful") {
     window.location.href = "login.html";
-    return false; // prevent form reload
+  }
+});
+
+
+  return false; // prevent page reload
 }
+</script>
 
 
-function forgot() {
-  fetch("http://localhost:5000/api/auth/forgot", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({ email: email.value })
-  })
-  .then(res => res.json())
-  .then(data => alert(data.message));
-}</script>
 </body>
 </html>

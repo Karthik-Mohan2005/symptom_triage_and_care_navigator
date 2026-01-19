@@ -2,24 +2,46 @@ let chats = [];
 let currentChatId = null;
 
 /* =========================
+   AUTH CHECK
+========================= */
+const userId = localStorage.getItem("user_id");
+if (!userId) {
+  alert("Please login first");
+  window.location.href = "login.html";
+}
+
+/* =========================
    CHAT MANAGEMENT
 ========================= */
 
-function newChat() {
-  const id = Date.now();
+async function newChat() {
+  const title = "Triage - " + new Date().toLocaleTimeString();
 
-  chats.push({
-    id,
-    title: "Triage - " + new Date().toLocaleTimeString(),
-    messages: [],
-    sessionId: null
+  const res = await fetch("http://127.0.0.1:5000/api/chat/save-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ user_id: userId, title })
   });
 
-  currentChatId = id;
-  renderChatHistory();
-  renderChat();
+  const data = await res.json();
 
-  addBotMessage("👋 Hi! Describe your symptoms to start triage.");
+  const chat = {
+    id: data.chat_id,
+    title,
+    messages: [],
+    sessionId: null   // 🔑 backend triage session
+  };
+
+  chats.unshift(chat);
+  currentChatId = chat.id;
+
+  renderChatHistory();
+
+  const chatBox = document.getElementById("chatBox");
+  chatBox.innerHTML = "";
+
+  // ✅ UI-only welcome (NOT saved)
+  appendMessage("👋 Hi! Describe your symptoms to start triage.", "bot", false);
 }
 
 function selectChat(id) {
@@ -27,7 +49,11 @@ function selectChat(id) {
   renderChat();
 }
 
-function deleteChat(id) {
+async function deleteChat(id) {
+  await fetch(`http://127.0.0.1:5000/api/chat/delete/${id}`, {
+    method: "DELETE"
+  });
+
   chats = chats.filter(c => c.id !== id);
 
   if (currentChatId === id) {
@@ -37,6 +63,10 @@ function deleteChat(id) {
 
   renderChatHistory();
 }
+
+/* =========================
+   RENDER UI
+========================= */
 
 function renderChatHistory() {
   const chatHistory = document.getElementById("chatHistory");
@@ -70,6 +100,11 @@ function renderChat() {
   const chat = chats.find(c => c.id === currentChatId);
   if (!chat) return;
 
+  if (chat.messages.length === 0) {
+    appendMessage("👋 Hi! Describe your symptoms to start triage.", "bot", false);
+    return;
+  }
+
   chat.messages.forEach(m => {
     appendMessage(m.text, m.sender, false);
   });
@@ -85,7 +120,7 @@ async function sendMessage() {
   if (!text || !currentChatId) return;
 
   input.value = "";
-  appendMessage(text, "user");
+  appendMessage(text, "user", true);
 
   const typing = appendMessage("Processing your symptoms...", "bot", false);
 
@@ -102,53 +137,49 @@ async function sendMessage() {
     });
 
     const data = await res.json();
-    console.log("Backend response:", data);
-
     typing.remove();
-    chat.sessionId = data.session_id;
 
-    /* 🔹 Bot message */
-    if (data.message) {
-      appendMessage(data.message, "bot");
+    // 🔑 SET ONCE — DO NOT OVERWRITE
+    if (!chat.sessionId) {
+      chat.sessionId = data.session_id;
     }
 
-    /* 🔹 Final triage */
-    if (data.triage) {
-      let msg = `🩺 Triage Level: ${data.triage.level}
-${data.triage.message}`;
+    if (data.message) {
+      appendMessage(data.message, "bot", true);
+    }
 
+    if (data.triage) {
+      let msg = `🩺 Triage Level: ${data.triage.level}\n${data.triage.message}`;
+      if (data.triage.level === "CRITICAL") {
+    showCriticalMap();
+  }
       if (data.triage.remedies) {
         msg += "\n\n🏠 Home Care Instructions:\n";
-        data.triage.remedies.forEach(r => {
-          msg += "• " + r + "\n";
-        });
+        data.triage.remedies.forEach(r => msg += "• " + r + "\n");
       }
 
       if (data.triage.warning_signs) {
         msg += "\n⚠️ Watch out for these warning signs:\n";
-        data.triage.warning_signs.forEach(w => {
-          msg += "• " + w + "\n";
-        });
+        data.triage.warning_signs.forEach(w => msg += "• " + w + "\n");
       }
 
-      appendMessage(msg, "bot");
+      appendMessage(msg, "bot", true);
     }
 
-  } catch (err) {
+  } catch {
     typing.remove();
-    appendMessage("⚠️ Server error. Please try again.", "bot");
-    console.error(err);
+    appendMessage("⚠️ Server error. Please try again.", "bot", false);
   }
 }
 
 /* =========================
-   MESSAGE UI
+   MESSAGE UI + DB SAVE
 ========================= */
 
-function appendMessage(text, sender, save = true) {
+function appendMessage(text, sender, save) {
   const chatBox = document.getElementById("chatBox");
-  const msg = document.createElement("div");
 
+  const msg = document.createElement("div");
   msg.className = sender === "user" ? "user-msg" : "bot-msg";
   msg.innerText = text;
 
@@ -158,19 +189,20 @@ function appendMessage(text, sender, save = true) {
   if (save && currentChatId) {
     const chat = chats.find(c => c.id === currentChatId);
     chat.messages.push({ sender, text });
+
+    fetch("http://127.0.0.1:5000/api/chat/save-message", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: currentChatId, sender, text })
+    });
   }
 
   return msg;
 }
 
-function addBotMessage(text) {
-  appendMessage(text, "bot");
-}
-
 /* =========================
-   ENTER KEY SUPPORT ✅
+   ENTER KEY SUPPORT
 ========================= */
-
 document.getElementById("userInput").addEventListener("keydown", e => {
   if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault();
@@ -179,7 +211,66 @@ document.getElementById("userInput").addEventListener("keydown", e => {
 });
 
 /* =========================
-   AUTO START FIRST CHAT
+   LOAD HISTORY ON LOGIN
 ========================= */
+async function loadHistory() {
+  const res = await fetch(`http://127.0.0.1:5000/api/chat/history/${userId}`);
+  const data = await res.json();
 
-newChat();
+  chats = data.map(chat => ({
+    id: chat.id,
+    title: chat.title,
+    messages: chat.messages || [],
+    sessionId: null   // 🔑 backend session resumes on first message
+  }));
+
+  renderChatHistory();
+
+  if (chats.length > 0) {
+    currentChatId = chats[0].id;
+    renderChat();
+  } else {
+    await newChat();
+  }
+}
+let mapInitialized = false;
+
+function showCriticalMap() {
+  if (!navigator.geolocation) {
+    alert("Geolocation not supported");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const lat = pos.coords.latitude;
+      const lon = pos.coords.longitude;
+
+      const container = document.getElementById("mapContainer");
+      container.style.display = "block";
+
+      if (!mapInitialized) {
+        const map = L.map("map").setView([lat, lon], 14);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap"
+        }).addTo(map);
+
+        L.marker([lat, lon])
+          .addTo(map)
+          .bindPopup("📍 Your current location")
+          .openPopup();
+
+        mapInitialized = true;
+      }
+    },
+    () => {
+      alert("Location access denied.");
+    }
+  );
+}
+
+/* =========================
+   START APP
+========================= */
+loadHistory();

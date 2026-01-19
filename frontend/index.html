@@ -3,16 +3,36 @@
 <head>
   <title>AI Symptom Triage Chatbot</title>
   <link rel="stylesheet" href="styles.css">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
+<script>
+if (!localStorage.getItem("user_id")) {
+  alert("Please login first");
+  window.location.href = "login.html";
+}
+</script>
+
 <body>
 
 <div class="app">
-
   <aside class="sidebar">
-    <div class="logo">CareBot</div>
-    <button class="new-chat" onclick="newChat()">＋ New Chat</button>
-    <ul id="chatHistory" class="chat-history"></ul>
-  </aside>
+  <div class="logo">CareBot</div>
+
+  <button class="new-chat" onclick="newChat()">＋ New Chat</button>
+
+  <ul id="chatHistory" class="chat-history"></ul>
+
+  <!-- 👤 USER PROFILE (BOTTOM) -->
+  <div class="user-profile">
+    <span id="usernameDisplay"></span>
+  </div>
+</aside>
+
 
   <main class="chat-area">
     <div id="chatBox" class="chat-box"></div>
@@ -24,7 +44,19 @@
   </main>
 
 </div>
+<!-- 🚨 Emergency Map (Hidden by default) -->
+<div id="mapContainer" style="display:none; padding:12px;">
+  <div id="map" style="height:220px; border-radius:12px;"></div>
+</div>
+
 
 <script src="chat.js"></script>
+<script>
+  const username = localStorage.getItem("username");
+  if (username) {
+    document.getElementById("usernameDisplay").innerText = username;
+  }
+</script>
+
 </body>
 </html>

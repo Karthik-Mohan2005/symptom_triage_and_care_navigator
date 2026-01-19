@@ -139,7 +139,7 @@
 
 
 
-       <form onsubmit="goNext(event)">
+       <form onsubmit="login(event)">
     <label for="email">Email Address</label>
     <input type="email" id="email" placeholder="Enter your email">
 
@@ -157,63 +157,55 @@
     </div>
 
 </div>
-<script >function signup() {
-
-  fetch("http://localhost:5000/api/auth/signup", {
+<script>
+    function login() {
+  fetch("http://127.0.0.1:5000/api/auth/login", {
     method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({
-      name: name.value,
-      email: email.value,
-      password: password.value,
-      confirmPassword: confirmPassword.value
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    alert(data.message);
-    if (data.message === "Signup successful")
-      window.location.href = "login.html";
-  });
-}
-function goNext(event) {
-    event.preventDefault(); // stop reload
-    window.location.href = "index.html"; // anyone can enter
-}
-
-function login() {
-  fetch("http://localhost:5000/api/auth/login", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email: email.value,
       password: password.value
     })
   })
   .then(res => res.json())
-  .then(data => alert(data.message));
+  .then(data => {
+    if (data.user_id) {
+      // ✅ STORE BOTH ID AND NAME
+      localStorage.setItem("user_id", data.user_id);
+      localStorage.setItem("username", data.name);
+
+      window.location.href = "index.html";
+    } else {
+      alert(data.message);
+    }
+  });
 }
 
-function forgot() {
-  fetch("http://localhost:5000/api/auth/forgot", {
+function login(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const password = document.getElementById("password").value;
+
+  fetch("http://127.0.0.1:5000/api/auth/login", {
     method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({ email: email.value })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
   })
-  .then(res => res.json())
-  .then(data => alert(data.message));
+.then(res => res.json())
+.then(data => {
+  alert(data.message);
 
-}
+  if (data.message === "Login successful") {
+    localStorage.setItem("user_id", data.user_id);
+    localStorage.setItem("username", data.name); // ✅ ADD THIS
+    window.location.href = "index.html";
+  }
+});
 
-
-function validateLogin() {
-   
-        window.location.href = "index.html";
-    
-
-    return false; // 🔑 Prevent form reload
 }
 </script>
+
 
 </body>
 </html>

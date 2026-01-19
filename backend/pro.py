@@ -97,7 +97,7 @@ def finalize_triage(score, symptoms):
         "level": level,
         "message": config["message"]
     }
-
+    
 
     if level == "CRITICAL":
         email_body = build_emergency_email()

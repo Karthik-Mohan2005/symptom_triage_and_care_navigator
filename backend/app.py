@@ -2,19 +2,32 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import uuid
 
+from database import db
+from auth_routes import auth
 from pro import triage_step
+from chat_routes import chat
 
 app = Flask(__name__)
-CORS(app)
+app.secret_key = "carebot-secret-key"   # 🔑 REQUIRED
+CORS(app, supports_credentials=True)
+app.register_blueprint(chat, url_prefix="/api/chat")
 
-# =========================
-# IN-MEMORY SESSION STORE
-# =========================
+
+# 🔐 Database config (SQLite for now)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///carebot.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db.init_app(app)
+app.register_blueprint(auth)
+
+with app.app_context():
+    db.create_all()
+
 SESSIONS = {}
 
 def create_new_state():
     return {
-        "stage": "collect",      # collect → followup → redflag → done
+        "stage": "collect",
         "symptoms": set(),
         "followups": [],
         "candidates": [],
@@ -24,51 +37,33 @@ def create_new_state():
         "last_redflag": None
     }
 
-# =========================
-# HEALTH CHECK
-# =========================
-@app.route("/", methods=["GET"])
-def home():
-    return jsonify({
-        "status": "Backend running",
-        "message": "Open frontend/index.html to start"
-    })
-
-# =========================
-# CHAT ENDPOINT
-# =========================
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.get_json()
-    user_message = data.get("message", "").strip()
-    session_id = data.get("session_id")
+    try:
+        data = request.get_json()
+        user_message = data.get("message", "").strip()
+        session_id = data.get("session_id")
 
-    if not session_id or session_id not in SESSIONS:
-        session_id = str(uuid.uuid4())
-        SESSIONS[session_id] = create_new_state()
+        if not session_id or session_id not in SESSIONS:
+            session_id = str(uuid.uuid4())
+            SESSIONS[session_id] = create_new_state()
 
-    state = SESSIONS[session_id]
+        state = SESSIONS[session_id]
+        response = triage_step(user_message, state)
 
-    response = triage_step(user_message, state)
+        return jsonify({
+            "session_id": session_id,
+            "message": response.get("message"),
+            "options": response.get("options"),
+            "triage": response.get("triage")
+        })
 
-    # ⚠️ DO NOT MODIFY STATE
-    # Convert only for response if needed
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({
+            "message": "Internal server error",
+            "triage": None
+        }), 500
 
-    return jsonify({
-        "session_id": session_id,
-        "message": response.get("message"),
-        "options": response.get("options"),
-        "triage": response.get("triage")
-    })
-
-
-# =========================
-# RUN SERVER
-# =========================
 if __name__ == "__main__":
-    app.run(
-        host="127.0.0.1",
-        port=5000,
-        debug=True
-    )
-
+    app.run(debug=True)
